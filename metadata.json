@@ -1,0 +1,7 @@
+{
+  "name": "English Visualizer Pro",
+  "description": "A high-performance system to generate and manage visual representations for 1,800+ English sentences using Gemini image generation, maintaining a consistent artistic style based on a template.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
