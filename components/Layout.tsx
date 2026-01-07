@@ -9,7 +9,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">V</div>
             <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">
-              English Visualizer Pro
+              English Visualizer
             </h1>
           </div>
           <div className="flex items-center gap-4 text-sm text-slate-500 font-medium">

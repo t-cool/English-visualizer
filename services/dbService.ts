@@ -62,6 +62,26 @@ export const getAllImages = async (): Promise<Record<string, string>> => {
   });
 };
 
+export const iterateImages = async (callback: (id: string, base64: string) => void): Promise<void> => {
+  const db = await initDB();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(STORE_NAME, 'readonly');
+    const store = transaction.objectStore(STORE_NAME);
+    const request = store.openCursor();
+    
+    request.onsuccess = (event: any) => {
+      const cursor = event.target.result;
+      if (cursor) {
+        callback(cursor.key as string, cursor.value);
+        cursor.continue();
+      } else {
+        resolve();
+      }
+    };
+    request.onerror = () => reject(request.error);
+  });
+};
+
 export const getAllKeys = async (): Promise<string[]> => {
   const db = await initDB();
   return new Promise((resolve, reject) => {
