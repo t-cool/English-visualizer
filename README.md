@@ -36,6 +36,13 @@ npm install
 GEMINI_API_KEY=YOUR_API_KEY
 ```
 
+#### GitHub Actions でのデプロイ
+GitHub Actions でビルドする際、`GEMINI_API_KEY` 環境変数が必要です。
+GitHub リポジトリの **Settings > Secrets and variables > Actions** に移動し、**New repository secret** から以下の名前でキーを追加してください：
+
+- **Name**: `GEMINI_API_KEY`
+- **Value**: (あなたの実際の API キー)
+
 ### 3. 開発サーバーの起動
 ```bash
 npm run dev
